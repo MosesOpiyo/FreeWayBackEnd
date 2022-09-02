@@ -19,4 +19,6 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('authentication/',include('FreeWayAuth.urls')),
+    path('profile/',include('UserInstance.urls')),
+    path('venue/',include('FreeWayVenues.urls')),
 ]

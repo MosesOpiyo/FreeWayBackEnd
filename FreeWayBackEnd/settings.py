@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'FreeWayAuth.apps.FreewayauthConfig',
     'corsheaders',
     'UserInstance.apps.UserinstanceConfig',
+    'FreeWayVenues.apps.FreewayvenuesConfig',
 ]
 
 MIDDLEWARE = [
