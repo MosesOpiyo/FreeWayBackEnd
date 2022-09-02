@@ -9,8 +9,23 @@ from FreeWayAuth.models import Account
 
 # Create your models here.
 class Profile(models.Model):
-    user = models.OneToOneField(Account,on_delete=CASCADE,null=True,related_name="profile")
-    phone_number = models.IntegerField(unique=True,null=True)
+    user = models.OneToOneField(
+        Account,
+        on_delete=CASCADE,
+        null=True,
+        related_name="profile"
+    )
+
+    phone_number = models.IntegerField(
+        unique=True,
+        null=True
+    )
+    
+    license_plate = models.CharField(
+        max_length=10,
+        null=True,
+        unique=True
+    )
 
     def __str__(self):
         return self.user.username + "'s " + "profile"
