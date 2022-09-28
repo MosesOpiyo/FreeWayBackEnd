@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-kt^e$@1zn=v26hphb)a+7_u%i!*e675szlv(6vcgyqh5%o(1br
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.100.13']
 
 
 # Application definition
@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'FreeWayAuth.apps.FreewayauthConfig',
     'corsheaders',
     'UserInstance.apps.UserinstanceConfig',
+    'FreeWayVenues.apps.FreewayvenuesConfig',
+    'FreeWayVenueCharges.apps.FreewayvenuechargesConfig'
 ]
 
 MIDDLEWARE = [
@@ -58,6 +60,8 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'FreeWayBackEnd.urls'
 
@@ -144,6 +148,7 @@ cloudinary.config(
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = 'static/'
+STATIC_ROOT = 'static'
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
