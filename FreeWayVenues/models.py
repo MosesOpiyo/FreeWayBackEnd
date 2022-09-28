@@ -28,9 +28,16 @@ class Venue(models.Model):
         null=True 
     )
     parking_spaces = models.IntegerField()
-    time = models.TimeField()
-    charging_fees_per_time = models.IntegerField()
     customer_care_number = models.IntegerField(null=True)
 
     def __str__(self):
       return self.name
+
+    def single_venue(pk):
+        """This returns single venue
+        Args:
+            pk ([type]): [description]
+        """
+        venue = Venue.objects.get(pk = pk)
+
+        return venue

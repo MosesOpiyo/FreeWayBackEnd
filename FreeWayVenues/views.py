@@ -11,13 +11,21 @@ from .models import *
 
 import json
 # Create your views here.
-@api_view(['GET','POST'])
-@permission_classes([IsAuthenticated])
+@api_view(['GET'])
 def venue_view(request):
     data = {}
 
     if request.method == 'GET':
         venues = Venue.objects.all()
-        data = VenueSerializer(venues,many=True).data
-        
+        data = GetVenueSerializer(venues,many=True).data
+        return Response(data,status = status.HTTP_200_OK)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def singleVenue(request,pk):
+    data = {}
+
+    if request.method == 'GET':
+        venue = Venue.single_venue(pk)
+        data = GetVenueSerializer(venue).data
         return Response(data,status = status.HTTP_200_OK)
