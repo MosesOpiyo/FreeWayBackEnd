@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'rest_framework.authtoken',
     'FreeWayAuth.apps.FreewayauthConfig',
+    'VenueBarriers.apps.VenuebarriersConfig',
     'corsheaders',
     'UserInstance.apps.UserinstanceConfig',
     'FreeWayVenues.apps.FreewayvenuesConfig',

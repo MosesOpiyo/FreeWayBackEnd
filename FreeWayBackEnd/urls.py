@@ -22,4 +22,6 @@ urlpatterns = [
     path('user/',include('UserInstance.urls')),
     path('venue/',include('FreeWayVenues.urls')),
     path('charges/',include('FreeWayVenueCharges.urls')),
+    path('barriers/',include('VenueBarriers.urls')),
+    path('Timer/',include('parkingTimer.urls'))
 ]
