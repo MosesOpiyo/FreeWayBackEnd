@@ -18,5 +18,5 @@ class Timer(models.Model):
         default="",
         related_name="timer"
     ),
-    timerActiveted = models.BooleanField(default=False),
-    time = models.TimeField()
+    timerActivated = models.BooleanField(default=False),
+    time = models.IntegerField()
